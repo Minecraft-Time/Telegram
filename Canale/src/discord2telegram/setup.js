@@ -204,7 +204,7 @@ function setup(logger, dcBot, tgBot, messageMap, bridgeMap, settings, datadirPat
 					// Pass the message on to Telegram
 					try {
 						const textToSend = bridge.discord.sendUsernames
-							? `<b>${senderName}</b>\n${processedMessage}`
+							? `🌐 <b>${senderName}</b>: ${processedMessage}`
 							: processedMessage;
 						const tgMessage = await tgBot.telegram.sendMessage(
 							bridge.telegram.chatId,
@@ -237,9 +237,9 @@ function setup(logger, dcBot, tgBot, messageMap, bridgeMap, settings, datadirPat
 				antiInfoSpamSet.add(message.channel.id);
 
 				message.reply(
-					"This is an instance of a TediCross bot, bridging a chat in Telegram with one in Discord. " +
-						"If you wish to use TediCross yourself, please download and create an instance. " +
-						"See https://github.com/TediCross/TediCross"
+					"" +
+						"" +
+						""
 				)
 					// Delete it again after some time
 					.then(sleepOneMinute)
@@ -279,7 +279,7 @@ function setup(logger, dcBot, tgBot, messageMap, bridgeMap, settings, datadirPat
 
 				// Send the update to Telegram
 				const textToSend = bridge.discord.sendUsernames
-					? `<b>${senderName}</b>\n${processedMessage}`
+					? `🌐 <b>${senderName}</b>: ${processedMessage}`
 					: processedMessage;
 				await tgBot.telegram.editMessageText(
 					bridge.telegram.chatId,

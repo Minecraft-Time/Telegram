@@ -138,7 +138,7 @@ const relayMessage = ctx =>
 	R.forEach(async prepared => {
 		try {
 			// Discord doesn't handle messages longer than 2000 characters. Split it up into chunks that big
-			const messageText = prepared.header + "\n" + prepared.text;
+			const messageText = prepared.header + " " + prepared.text;
 			let chunks = R.splitEvery(2000, messageText);
 
 			// Wait for the Discord bot to become ready

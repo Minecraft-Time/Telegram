@@ -290,9 +290,9 @@ function informThisIsPrivateBot(ctx, next) {
 
 				// Send the reply
 				ctx.reply(
-					"This is an instance of a [TediCross](https://github.com/TediCross/TediCross) bot, " +
-						"bridging a chat in Telegram with one in Discord. " +
-						"If you wish to use TediCross yourself, please download and create an instance.",
+					"https://discord.gg/mBn9fhRfAm" +
+						"" +
+						"",
 					{
 						parse_mode: "markdown"
 					}
@@ -469,7 +469,7 @@ function addFileObj(ctx, next) {
 				R.path(["thumb", "file_id"]),
 				R.prop("file_id")
 			)(message.sticker),
-			name: "sticker.webp"
+			name: "<:Pietrarossa:809467032999428126>sticker.webp"
 		};
 	} else if (!R.isNil(message.video)) {
 		// Video
@@ -562,21 +562,21 @@ async function addPreparedObj(ctx, next) {
 				if (bridge.telegram.sendUsernames) {
 					if (!R.isNil(tc.forwardFrom)) {
 						// Forward
-						header = `**${originalSender}** (forwarded by **${senderName}**)`;
+						header = `<:Pietrarossa:809467032999428126> **${originalSender}**: (forwarded by **${senderName}**)`;
 					} else if (!R.isNil(tc.replyTo)) {
 						// Reply
-						header = `**${senderName}** (in reply to **${repliedToName}**)`;
+						header = `<:Pietrarossa:809467032999428126> **${senderName}**: (in reply to **${repliedToName}**)`;
 					} else {
 						// Ordinary message
-						header = `**${senderName}**`;
+						header = `<:Pietrarossa:809467032999428126> **${senderName}**:`;
 					}
 				} else {
 					if (!R.isNil(tc.forwardFrom)) {
 						// Forward
-						header = `(forward from **${originalSender}**)`;
+						header = `<:Pietrarossa:809467032999428126> (forward from **${originalSender}**)`;
 					} else if (!R.isNil(tc.replyTo)) {
 						// Reply
-						header = `(in reply to **${repliedToName}**)`;
+						header = `<:Pietrarossa:809467032999428126> (in reply to **${repliedToName}**)`;
 					} else {
 						// Ordinary message
 						header = "";
